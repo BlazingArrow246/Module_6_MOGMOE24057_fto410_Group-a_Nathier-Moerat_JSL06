@@ -12,7 +12,7 @@ function displayMenuItems(menu) {
 
     // Loop through each category and its items in the menu object
 for (const category in menu) {
-    console.log(`${category}:`);  // Output the category name (e.g., "Starters")
+    console.log(`${category}:`);  // Output the category name 
     
     // Loop through each item in the category
     menu[category].forEach(item => {
@@ -23,17 +23,21 @@ for (const category in menu) {
         
     // Create an element to represent the category
     const categoryElement = document.createElement("div");
+
         // Set the text content of the category element to the category name
         const categoryTitle = document.createElement("h3");
         categoryTitle.textContent = category; 
+
         // Append the category element to the menu container
         categoryElement.appendChild(categoryTitle);
+
         // Create an element to represent a list of items
         const itemList = document.createElement("ul");
+
          // Loop through each item in the category and create a list item
          menu[category].forEach(item => {
             const listItem = document.createElement("li");
-            listItem.textContent = item;  // Set the item name (e.g., "Garlic Bread")
+
             itemList.appendChild(listItem);  // Append the list item to the ul
         });
         // Append a list of items element to the menu container
@@ -41,9 +45,12 @@ for (const category in menu) {
 
         // Loop through the items in the category and create list items
             // Create a list item element
-
+            menu[category].forEach (item => {
+                // Create a new <li> element
+                const listItem = document.createElement("li");
+})
             // Set the text content of the list item element to the item name
-
+            listItem.textContent = item;
             // Attach a click event listener to the list item to add it to the order
 
             // Append the list item to the list of items
@@ -69,7 +76,7 @@ function addToOrder(itemName) {
 // Function to initialize the menu system
 function initMenuSystem(menu) {
     // Call the function to display menu items
-}
+} displayMenuItems(menu)
 
 // Start the menu system by calling the init function
 initMenuSystem(menu);
