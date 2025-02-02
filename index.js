@@ -22,17 +22,24 @@ for (const category in menu) {
     console.log("");  // Add a blank line for separation
         
     // Create an element to represent the category
-
+    const categoryElement = document.createElement("div");
         // Set the text content of the category element to the category name
-
+        const categoryTitle = document.createElement("h3");
+        categoryTitle.textContent = category; 
         // Append the category element to the menu container
-
+        categoryElement.appendChild(categoryTitle);
         // Create an element to represent a list of items
-
+        const itemList = document.createElement("ul");
+         // Loop through each item in the category and create a list item
+         menu[category].forEach(item => {
+            const listItem = document.createElement("li");
+            listItem.textContent = item;  // Set the item name (e.g., "Garlic Bread")
+            itemList.appendChild(listItem);  // Append the list item to the ul
+        });
         // Append a list of items element to the menu container
+        categoryElement.appendChild(itemList);
 
         // Loop through the items in the category and create list items
-
             // Create a list item element
 
             // Set the text content of the list item element to the item name
