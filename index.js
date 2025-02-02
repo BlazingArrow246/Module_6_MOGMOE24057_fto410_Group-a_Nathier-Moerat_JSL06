@@ -8,10 +8,20 @@ const menu = {
 // Function to display menu items by category
 function displayMenuItems(menu) {
     // Get the menu container element from the HTML
+    const menuContainer = document.getElementById("menu");
 
     // Loop through each category and its items in the menu object
-
-        // Create an element to represent the category
+for (const category in menu) {
+    console.log(`${category}:`);  // Output the category name (e.g., "Starters")
+    
+    // Loop through each item in the category
+    menu[category].forEach(item => {
+        console.log(`  - ${item}`);  // Output each item in the category
+    });
+}
+    console.log("");  // Add a blank line for separation
+        
+    // Create an element to represent the category
 
         // Set the text content of the category element to the category name
 
